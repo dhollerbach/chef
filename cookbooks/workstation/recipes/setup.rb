@@ -1,14 +1,11 @@
-package 'tree' do
+package ['tree', 'git', 'ntp'] do
   action :install
 end
-
-package 'git' do
-  action :install
-end
-
-package 'ntp'
 
 template '/etc/motd' do
-  source 'motd.erb'
   action :create
+  source 'motd.erb'
+  variables(
+    :name => 'Dave Hollerbach'
+  )
 end
