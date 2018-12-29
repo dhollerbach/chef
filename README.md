@@ -38,7 +38,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **sudo chef-client -zr 'recipe[cookbook]'** - Runs the default recipe from the specified cookbook locally
 
 ### Chef Generate
-* **sudo chef generate [cookbook | template | file]** - Creates a cookbook, template, or file, along with some other files (like files used for unit tests). Use these when creating new resources
+* **sudo chef generate [cookbook | template | recipe]** - Creates a cookbook, template, or recipe, along with some other files (like files used for unit tests). Use these when creating new resources
 
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
@@ -64,3 +64,6 @@ This is a practice project for chef and is NOT intended for production use. It a
 
 * **ChefDK Tools Aren't Working or Aren't Available**
   * chef exec <tool_name>
+
+* **Specify platforms or recipes for chef kitchen to test against**
+  * If you generated a cookbook using chef generate, a .kitchen.yml file is automatically built for you in that cookbook's directory. Edit this file to add platforms, recipes, or other resources you'd like to test against.
