@@ -1,8 +1,8 @@
 # OVERVIEW
 
-This is a practice project for chef and is NOT intended for production use. It also has some helpful commands and tips for using or configuring chef.
+This is a practice project for chef and is NOT intended for production use. It also has some helpful commands and tips for using or configuring vagrant and chef.
 
-# INSTALLATION
+# INSTALLATION / TOOLS
 * **Virtualbox** - https://www.virtualbox.org/wiki/Downloads
 * **Vagrant** - https://www.vagrantup.com/downloads.html
 * **Vagrant SCP** - vagrant plugin install vagrant-scp
