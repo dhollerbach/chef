@@ -38,10 +38,14 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **sudo chef-client -zr 'recipe[cookbook]'** - Runs the default recipe from the specified cookbook locally
 
 ### Chef Generate
-* **sudo chef generate [cookbook | template | recipe]** - Creates a cookbook, template, or recipe, along with some other files (like files used for unit tests). Use these when creating new resources
+* **chef generate [cookbook | template | recipe]** - Creates a cookbook, template, or recipe, along with some other files (like files used for unit tests). Use these when creating new resources
 
 ### Chef Kitchen
-* **sudo chef kitchen init** - Generates a .kitchen.yml if one was not already created when the cookbook was created
+* **kitchen init** - Generates a .kitchen.yml if one was not already created when the cookbook was created
+* **kitchen list** - Shows which platforms you are going to create when using kitchen and what settings are in the .kitchen.yml file
+* **kitchen create** - Creates the virtual machine(s) specified in the .kitchen.yml file
+* **kitchen login** - Logs into the virtual machine created by kitchen
+* **kitchen converge** - Runs the recipes on the virtual machine(s) created by kitchen
 
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
