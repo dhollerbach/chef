@@ -46,6 +46,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **kitchen create** - Creates the virtual machine(s) specified in the .kitchen.yml file
 * **kitchen login** - Logs into the virtual machine created by kitchen
 * **kitchen converge** - Runs the recipes on the virtual machine(s) created by kitchen
+* **kitchen verify** - Runs any tests that you have written against the virutal machine(s) using inspec
 
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
