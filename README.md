@@ -50,6 +50,9 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **kitchen converge** - Runs the recipes on the virtual machine(s) created by kitchen
 * **kitchen verify** - Runs any tests that you have written against the virutal machine(s) using inspec
 
+### ChefSpec
+* **sudo chef exec rspec** - Generates the resources needed for a unit test. Then, runs the unit tests accordingly. This command should be run from within a cookbook
+
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
 * **sudo chef exec cookstyle <path_to_cookbook>** - Checks a cookbook for ruby design best practices
@@ -61,6 +64,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **knife** - Primary means of communication with a chef server
 * **cookstyle** - Ruby best practices tool for cookbooks. Aka: Rubocop
 * **foodcritic** - Cookbook design best practices
+* **rspec** - Unit testing framework for cookbooks
 
 # TIPS
 
