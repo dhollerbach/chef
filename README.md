@@ -42,7 +42,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
-* **sudo chef exec cookstyle <pach_to_cookbook>** - Checks a cookbook for ruby design best practices
+* **sudo chef exec cookstyle <path_to_cookbook>** - Checks a cookbook for ruby design best practices
 * **ruby -c my_cookbook_file.rb** - Uses ruby to check a cookbook's Ruby syntax
 
 ## ChefDK / Toolsets
