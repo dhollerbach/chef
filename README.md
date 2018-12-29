@@ -27,11 +27,8 @@ This is a practice project for chef and is NOT intended for production use. It a
 ### Chef
 
 - -z || --localmode - Run on localhost
-
 - -r || --runlist - Replace current run list with specified items
-
 - sudo chef-client -z <path_to_recipe> - Runs a recipe locally
-
 - sudo chef-client -zr 'recipe[cookbook]' - Runs the default recipe from the specified cookbook locally
 
 ## TIPS
