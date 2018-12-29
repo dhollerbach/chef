@@ -26,12 +26,23 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **vagrant reload** - Reloads the vagrant box. Can be used after modifying the Vagrantfile - such as after enabling port fowarding (below)
 
 ## Chef
+
+### Switches
 * **-z || --localmode** - Run on localhost
 * **-r || --runlist** - Replace current run list with specified items
+
+### Chef-Client
 * **sudo chef-client -z <path_to_recipe>** - Runs a recipe locally
 * **sudo chef-client -zr 'recipe[cookbook::recipe]' - Runs a recipe from the specified cookbook locally
 * **sudo chef-client -zr 'recipe[cookbook::recipe],recipe[cookbook::recipe]' - Runs multiple recipes locally. Note that there is NO space after the comma
 * **sudo chef-client -zr 'recipe[cookbook]'** - Runs the default recipe from the specified cookbook locally
+
+### Chef Generate
+* **sudo chef generate [cookbook | template | file]** - Creates a cookbook, template, or file, along with some other files (like files used for unit tests). Use these when creating new resources
+
+### Chef Troubleshooting / Best Practices
+* **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
+* **sudo chef exec cookstyle <pach_to_cookbook>** - Checks a cookbook for ruby design best practices
 * **ruby -c my_cookbook_file.rb** - Uses ruby to check a cookbook's Ruby syntax
 
 ## ChefDK / Toolsets
