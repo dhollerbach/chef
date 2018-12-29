@@ -21,7 +21,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **vagrant ssh** - SSH's into the vagrant box
 * **vagrant suspend** - Saves the machine state and shuts down the virtual machine
 * **vagrant resume** - Resumes the suspended virtual machine
-* **vagrant destroy** --force - Destroy all running virtual machines
+* **vagrant destroy --force** - Destroy all running virtual machines
 * **vagrant reload** - Reloads the vagrant box. Can be used after modifying the Vagrantfile - such as after enabling port fowarding (below)
 
 ## Chef
@@ -40,8 +40,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 # TIPS
 
 ## Vagrant
-
-* Enable port forwarding. In the Vagrantfile, uncomment the following the line. You can also add additional port forwardings by copying the following line and changing the port values.
+* **Enable port forwarding. In the Vagrantfile, uncomment the following the line. You can also add additional port forwardings by copying the following line and changing the port values.**
   * config.vm.network "forwarded_port", guest: 80, host: 8080
 
 ## Chef
