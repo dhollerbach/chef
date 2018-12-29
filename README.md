@@ -10,6 +10,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **Chef (vagrant box)** - curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
 * **ChefDK** - https://downloads.chef.io/chefdk 
 * **Rub Style Guide** - https://docs.chef.io/ruby.html
+* **Inspec** - https://www.inspec.io/docs/reference/resources/
 
 # COMMANDS
 
@@ -44,6 +45,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **kitchen init** - Generates a .kitchen.yml if one was not already created when the cookbook was created
 * **kitchen list** - Shows which platforms you are going to create when using kitchen and what settings are in the .kitchen.yml file
 * **kitchen create** - Creates the virtual machine(s) specified in the .kitchen.yml file
+* **kitchen destroy** - Removes the virtual machine(s) specified in the .kitchen.yml file
 * **kitchen login** - Logs into the virtual machine created by kitchen
 * **kitchen converge** - Runs the recipes on the virtual machine(s) created by kitchen
 * **kitchen verify** - Runs any tests that you have written against the virutal machine(s) using inspec
@@ -73,5 +75,5 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **ChefDK Tools Aren't Working or Aren't Available**
   * chef exec <tool_name>
 
-* **Specify platforms or recipes for chef kitchen to test against**
+* **Specify platforms, drivers (vagrant, ec2, etc), and recipes for chef kitchen to test against**
   * If you generated a cookbook using chef generate, a .kitchen.yml file is automatically built for you in that cookbook's directory. Edit this file to add platforms, recipes, or other resources you'd like to test against.
