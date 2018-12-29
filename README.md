@@ -40,6 +40,9 @@ This is a practice project for chef and is NOT intended for production use. It a
 ### Chef Generate
 * **sudo chef generate [cookbook | template | recipe]** - Creates a cookbook, template, or recipe, along with some other files (like files used for unit tests). Use these when creating new resources
 
+### Chef Kitchen
+* **sudo chef kitchen init** - Generates a .kitchen.yml if one was not already created when the cookbook was created
+
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
 * **sudo chef exec cookstyle <path_to_cookbook>** - Checks a cookbook for ruby design best practices
