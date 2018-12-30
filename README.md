@@ -9,6 +9,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **Chef (localhost)** - https://docs.chef.io/install_omnibus.html
 * **Chef (vagrant box)** - curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
 * **ChefDK** - https://downloads.chef.io/chefdk 
+* **Chef Manage - https://manage.chef.io
 * **Rub Style Guide** - https://docs.chef.io/ruby.html
 * **Inspec** - https://www.inspec.io/docs/reference/resources/
 
@@ -52,6 +53,12 @@ This is a practice project for chef and is NOT intended for production use. It a
 
 ### ChefSpec
 * **sudo chef exec rspec** - Generates the resources needed for a unit test. Then, runs the unit tests accordingly. This command should be run from within a cookbook
+
+### Chef Knife
+* **knife client list** - Checks if the workstation being used is a valid workstation. This means it has a valid key (.pem) and knife.rb. This should be run in the same directory as the .chef-repo directory
+* **knife ssl check** - Checks if the workstation can communicate with the chef server
+* **knife cookbook list** - Lists the cookbooks on the chef server
+* **knife cookbook upload <cookbook_name>** - Uploads cookbooks to the chef server. This should be run in the same directory where the cookbooks directory is. You can use '-a' to upload all cookbooks
 
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
