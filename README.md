@@ -9,7 +9,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **Chef (localhost)** - https://docs.chef.io/install_omnibus.html
 * **Chef (vagrant box)** - curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
 * **ChefDK** - https://downloads.chef.io/chefdk 
-* **Chef Manage - https://manage.chef.io
+* **Chef Manage** - https://manage.chef.io
 * **Rub Style Guide** - https://docs.chef.io/ruby.html
 * **Inspec** - https://www.inspec.io/docs/reference/resources/
 
