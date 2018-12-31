@@ -1,10 +1,10 @@
 name 'myhaproxy'
-maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer 'Dave Hollerbach'
+maintainer_email 'dave.hollerbach@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures myhaproxy'
 long_description 'Installs/Configures myhaproxy'
-version '0.1.0'
+version '0.1.1'
 chef_version '>= 13.0'
 
 depends 'haproxy', '~> 6.2.5'

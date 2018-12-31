@@ -66,6 +66,10 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **knife cookbook upload <cookbook_name>** - Uploads cookbooks to the chef server. This should be run in the same directory where the cookbooks directory is. You can use '-a' to upload all cookbooks
 * **knife bootstrap** - Installs the chef-client, runs ohai, converges the node, and saves the node object to the chef server (i.e. knife bootstrap FQDN -x USER -P PWD --sudo -N node_name || knife bootstrap localhost --ssh-port 2222 --ssh-user vagrant --sudo --i /.vagrant/machines/web1/virtualbox/private_key -N web1) 
 
+### Berks
+* **berks install** - Install all dependencies from the source in the Berksfile. This should be run from the cookbook directory you want to install dependencies for
+* **berks upload** - Uploads the cookbook and its dependencies to the chef server. This should be run from the cookbook directory you want to upload. This command also checks for syntax errors
+
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
 * **sudo chef exec cookstyle <path_to_cookbook>** - Checks a cookbook for ruby design best practices
@@ -94,3 +98,6 @@ This is a practice project for chef and is NOT intended for production use. It a
 
 * **Specify platforms, drivers (vagrant, ec2, etc), and recipes for chef kitchen to test against**
   * If you generated a cookbook using chef generate, a .kitchen.yml file is automatically built for you in that cookbook's directory. Edit this file to add platforms, recipes, or other resources you'd like to test against.
+
+* **Supermarkets - should I use the public one or make a private one?**
+  * Depends on your needs but if you want a private one, it's common to make a GitHub repo and keep your cookbooks there. You could also create a supermarket internally link a url to it. Just be sure to change the Berksfile 'source' in your cookbook to that new link or url
