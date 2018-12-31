@@ -65,6 +65,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **knife cookbook list** - Lists the cookbooks on the chef server
 * **knife cookbook upload <cookbook_name>** - Uploads cookbooks to the chef server. This should be run in the same directory where the cookbooks directory is. You can use '-a' to upload all cookbooks
 * **knife bootstrap** - Installs the chef-client, runs ohai, converges the node, and saves the node object to the chef server (i.e. knife bootstrap FQDN -x USER -P PWD --sudo -N node_name || knife bootstrap localhost --ssh-port 2222 --ssh-user vagrant --sudo --i /.vagrant/machines/web1/virtualbox/private_key -N web1) 
+* **knife bootstrap localhost --ssh-port 2222 --ssh-user vagrant --sudo --i /.vagrant/machines/load-balancer/virtualbox/private_key -N load-balancer --run-list 'recipe[myhaproxy]'** - Runs the bootstrap and run-list commands in one command
 
 ### Berks
 * **berks install** - Install all dependencies from the source in the Berksfile. This should be run from the cookbook directory you want to install dependencies for
