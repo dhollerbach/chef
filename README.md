@@ -6,6 +6,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **Virtualbox** - https://www.virtualbox.org/wiki/Downloads
 * **Vagrant** - https://www.vagrantup.com/downloads.html
 * **Vagrant SCP** - vagrant plugin install vagrant-scp
+* **Vagrant-Ohai** - vagrant plugin install vagrant-ohai 
 * **Chef (localhost)** - https://docs.chef.io/install_omnibus.html
 * **Chef (vagrant box)** - curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
 * **ChefDK** - https://downloads.chef.io/chefdk 
@@ -34,6 +35,7 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **-r || --runlist** - Replace current run list with specified items
 
 ### Chef-Client
+* **sudo chef-client** - Runs recipes from a chef server. Should be used on a node
 * **sudo chef-client -z <path_to_recipe>** - Runs a recipe locally
 * **sudo chef-client -zr 'recipe[cookbook::recipe]' - Runs a recipe from the specified cookbook locally
 * **sudo chef-client -zr 'recipe[cookbook::recipe],recipe[cookbook::recipe]' - Runs multiple recipes locally. Note that there is NO space after the comma
@@ -56,9 +58,13 @@ This is a practice project for chef and is NOT intended for production use. It a
 
 ### Chef Knife
 * **knife client list** - Checks if the workstation being used is a valid workstation. This means it has a valid key (.pem) and knife.rb. This should be run in the same directory as the .chef-repo directory
+* **knife node list** - Shows a list of nodes
+* **knife node show <node_name>** - Shows more information about a particular node
+* **knife node run_list add <node_name> 'recipe[cookbook],recipe[cookbook:recipe]'** - Adds the specified recipes on the specified node from the chef server
 * **knife ssl check** - Checks if the workstation can communicate with the chef server
 * **knife cookbook list** - Lists the cookbooks on the chef server
 * **knife cookbook upload <cookbook_name>** - Uploads cookbooks to the chef server. This should be run in the same directory where the cookbooks directory is. You can use '-a' to upload all cookbooks
+* **knife bootstrap** - Installs the chef-client, runs ohai, converges the node, and saves the node object to the chef server (i.e. knife bootstrap FQDN -x USER -P PWD --sudo -N node_name || knife bootstrap localhost --ssh-port 2222 --ssh-user vagrant --sudo --i /.vagrant/machines/web1/virtualbox/private_key -N web1) 
 
 ### Chef Troubleshooting / Best Practices
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
