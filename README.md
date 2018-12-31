@@ -82,10 +82,18 @@ Primary means of communication with the chef server
 * **knife bootstrap** - Installs the chef-client, runs ohai, converges the node, and saves the node object to the chef server (i.e. knife bootstrap FQDN -x USER -P PWD --sudo -N node_name || knife bootstrap localhost --p 2222 -x vagrant --sudo --i /.vagrant/machines/web1/virtualbox/private_key -N web1) 
 * **knife bootstrap localhost -p 2222 -x vagrant --sudo --i /.vagrant/machines/load-balancer/virtualbox/private_key -N load-balancer --run-list 'recipe[myhaproxy]'** - Runs the bootstrap and run-list commands in one command
 
-#### Role
+#### Role and SSH
 * **knife role list** - Lists all of the roles on the chef server
 * **knife role from file <path_to_file>** - Uploads a role from a file to the chef server
 * **knife node run_list set web1 'role[role_name]'** - Sets a node to use a role and that role's run list
+* **knife ssh localhost '<command>' --manual-list -p <port> -x <user> -i <identity_file>** - Runs a command to the machines specified (localhost in this case). These components can be found in vagrant using 'vagrant ssh-config'
+* **knife ssh '*:*' -p <port> -x <user> '<command>'** - Runs a command using a search. In this case, *:* is ALL nodes
+* **knife ssh 'role:web' -p <port> -x <user> '<command>'** - Runs a command on all nodes with a role of 'web'
+
+#### Search
+* **knife search <index> <search_query>** - Runs a search on the chef server. <index> can be 'client', 'environment', 'node', 'role', or the name of a 'data bag'. <search_query> is the format 'attribute:value'. If you use '*:*', it return everything
+* **knife search node 'role:web AND recipes:apache'** - Searches for any nodes with a role of web and recipes containing the apache recipe
+* **knife search role '*:*' -a name** - Searches for all nodes but only returns the name attributes
 
 ### Berks
 
