@@ -54,35 +54,61 @@ This is a practice project for chef and is NOT intended for production use. It a
 * **kitchen verify** - Runs any tests that you have written against the virutal machine(s) using inspec
 
 ### ChefSpec
+
+Unit testing framework for cookbooks
+
 * **sudo chef exec rspec** - Generates the resources needed for a unit test. Then, runs the unit tests accordingly. This command should be run from within a cookbook
 
 ### Chef Knife
+
+Primary means of communication with the chef server
+
+#### Client
 * **knife client list** - Checks if the workstation being used is a valid workstation. This means it has a valid key (.pem) and knife.rb. This should be run in the same directory as the .chef-repo directory
+
+#### Node
 * **knife node list** - Shows a list of nodes
 * **knife node show <node_name>** - Shows more information about a particular node
 * **knife node run_list add <node_name> 'recipe[cookbook],recipe[cookbook:recipe]'** - Adds the specified recipes on the specified node from the chef server
+
+#### SSL
 * **knife ssl check** - Checks if the workstation can communicate with the chef server
+
+#### Cookbook
 * **knife cookbook list** - Lists the cookbooks on the chef server
 * **knife cookbook upload <cookbook_name>** - Uploads cookbooks to the chef server. This should be run in the same directory where the cookbooks directory is. You can use '-a' to upload all cookbooks
+
+#### Bootstrap
 * **knife bootstrap** - Installs the chef-client, runs ohai, converges the node, and saves the node object to the chef server (i.e. knife bootstrap FQDN -x USER -P PWD --sudo -N node_name || knife bootstrap localhost --p 2222 -x vagrant --sudo --i /.vagrant/machines/web1/virtualbox/private_key -N web1) 
 * **knife bootstrap localhost -p 2222 -x vagrant --sudo --i /.vagrant/machines/load-balancer/virtualbox/private_key -N load-balancer --run-list 'recipe[myhaproxy]'** - Runs the bootstrap and run-list commands in one command
 
+#### Role
+* **knife role list** - Lists all of the roles on the chef server
+* **knife role from file <path_to_file>** - Uploads a role from a file to the chef server
+* **knife node run_list set web1 'role[role_name]'** - Sets a node to use a role and that role's run list
+
 ### Berks
+
+Versions and dependencies manager for cookbooks
+
 * **berks install** - Install all dependencies from the source in the Berksfile. This should be run from the cookbook directory you want to install dependencies for
 * **berks upload** - Uploads the cookbook and its dependencies to the chef server. This should be run from the cookbook directory you want to upload. This command also checks for syntax errors
 
-### Chef Troubleshooting / Best Practices
+### Chef FoodCritic
+
+Cookbook design best practices
+
 * **sudo chef exec foodcritic <path_to_cookbook>** - Checks a cookbook for chef design best practices
+
+### Chef Cookstyle
+
+Ruby best practices tool for cookbooks. Aka: Rubocop
+
 * **sudo chef exec cookstyle <path_to_cookbook>** - Checks a cookbook for ruby design best practices
 * **ruby -c my_cookbook_file.rb** - Uses ruby to check a cookbook's Ruby syntax
 
-## ChefDK / Toolsets
-* **berks** - Versions and dependencies manager for cookbooks
+## Additional ChefDK / Toolsets
 * **kitchen** - Unit and integration testing
-* **knife** - Primary means of communication with a chef server
-* **cookstyle** - Ruby best practices tool for cookbooks. Aka: Rubocop
-* **foodcritic** - Cookbook design best practices
-* **rspec** - Unit testing framework for cookbooks
 
 # TIPS
 
