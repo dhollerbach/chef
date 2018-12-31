@@ -102,3 +102,6 @@ This is a practice project for chef and is NOT intended for production use. It a
 
 * **Supermarkets - should I use the public one or make a private one?**
   * Depends on your needs but if you want a private one, it's common to make a GitHub repo and keep your cookbooks there. You could also create a supermarket internally link a url to it. Just be sure to change the Berksfile 'source' in your cookbook to that new link or url
+
+* **How do I make chef-client run on a schedule?**
+  * Go to https://supermarket.chef.io and go to the chef-client cookbook.
