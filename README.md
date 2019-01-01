@@ -33,8 +33,8 @@
 ### Chef-Client
 * **sudo chef-client** - Runs recipes from a chef server. Should be used on a node
 * **sudo chef-client -z <path_to_recipe>** - Runs a recipe locally
-* **sudo chef-client -zr 'recipe[cookbook::recipe]' - Runs a recipe from the specified cookbook locally
-* **sudo chef-client -zr 'recipe[cookbook::recipe],recipe[cookbook::recipe]' - Runs multiple recipes locally. Note that there is NO space after the comma
+* **sudo chef-client -zr 'recipe[cookbook::recipe]'** - Runs a recipe from the specified cookbook locally
+* **sudo chef-client -zr 'recipe[cookbook::recipe],recipe[cookbook::recipe]'** - Runs multiple recipes locally. Note that there is NO space after the comma
 * **sudo chef-client -zr 'recipe[cookbook]'** - Runs the default recipe from the specified cookbook locally
 
 ### Chef Generate
@@ -81,7 +81,7 @@ Primary means of communication with the chef server
 #### Role and SSH
 * **knife role list** - Lists all of the roles on the chef server
 * **knife role from file <path_to_file>** - Uploads a role from a file to the chef server
-* **knife node run_list set web1 'role[role_name]'** - Sets a node to use a role and that role's run list
+* **knife node run_list set <node_name> 'role[role_name]'** - Sets a node to use a role and that role's run list
 * **knife ssh localhost '<command>' --manual-list -p <port> -x <user> -i <identity_file>** - Runs a command to the machines specified (localhost in this case). These components can be found in vagrant using 'vagrant ssh-config'
 * **knife ssh '*:*' -p <port> -x <user> '<command>'** - Runs a command using a search. In this case, *:* is ALL nodes
 * **knife ssh 'role:web' -p <port> -x <user> '<command>'** - Runs a command on all nodes with a role of 'web'
