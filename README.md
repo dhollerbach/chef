@@ -97,6 +97,12 @@ Primary means of communication with the chef server
 * **knife search role '*:*' -a name** - Searches for all nodes but only returns the name attribute
 * **knife search node *:* -a chef_environment** - Searches for all the nodes but only returns the environment attribute
 
+#### Data Bags
+* **knife data bag create <name>** - Creates and uploads a data bag to the chef server
+* **knife data bag from file <data_bag_name> <path_to_file>** - Uploads a databag to the chef server using the data_bag_name specified. I.e. knife data bag from file users data_bags/users/user1.json data_bags/users/user2.json
+* **knife data bag show users/user1** - Show details on the specified data bag. In this case, the users databag and the user1 inside of it
+* **knife search users '*:*'** - Assuming the users databag is created, shows all users
+
 ### Berks
 
 Versions and dependencies manager for cookbooks
