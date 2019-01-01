@@ -13,3 +13,5 @@ search("users", "platform:centos").each do |user_data|
     shell user_data['shell']
   end
 end
+
+include_recipe 'myusers::groups'

@@ -1,3 +1,3 @@
 name 'load-balancer'
 description 'load-balancer server role'
-run_list 'recipe[workstation]','recipe[myhaproxy]','recipe[mychef-client]'
+run_list 'role[base]', 'recipe[workstation]', 'recipe[myhaproxy]'
