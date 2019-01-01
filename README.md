@@ -9,6 +9,8 @@
 * **Chef Manage** - https://manage.chef.io
 * **Rub Style Guide** - https://docs.chef.io/ruby.html
 * **Inspec** - https://www.inspec.io/docs/reference/resources/
+* **Tutorials** - https://learn.chef.io
+* **Examples** - https://github.com/obazoud/awesome-chef
 
 # COMMANDS
 
@@ -102,6 +104,9 @@ Primary means of communication with the chef server
 * **knife data bag from file <data_bag_name> <path_to_file>** - Uploads a databag to the chef server using the data_bag_name specified. I.e. knife data bag from file users data_bags/users/user1.json data_bags/users/user2.json
 * **knife data bag show users/user1** - Show details on the specified data bag. In this case, the users databag and the user1 inside of it
 * **knife search users '*:*'** - Assuming the users databag is created, shows all users
+* **knife data bag create <name> --secret-file <path_to_secret_file>** - Creates an encrypted data bag
+* **knife data bag from file <data_bag_name> <path_to_file> --secret-file <path_to_secret_file>** - Uploads a data bag file using encryption
+* **knife data bag show <data_bag_name> <data_bag_resource> --secret-file <path_to_secret_file>** - Decrypts an encrypted data bag resource
 
 ### Berks
 
@@ -125,6 +130,7 @@ Ruby best practices tool for cookbooks. Aka: Rubocop
 
 ## Additional ChefDK / Toolsets
 * **kitchen** - Unit and integration testing
+* **knife vault** - Secrets manager
 
 # TIPS
 

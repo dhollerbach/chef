@@ -1,3 +1,4 @@
 *.pem
 knife.rb
 .chef/
+secret-key
