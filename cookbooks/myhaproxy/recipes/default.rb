@@ -11,12 +11,19 @@ haproxy_frontend 'http-in' do
   default_backend 'servers'
 end
 
-haproxy_backend 'servers' do
-  server [
-    'web1 192.168.10.43:80 maxconn 32',
-    'web2 192.168.10.44:80 maxconn 32'
-  ]
-  notifies :reload, 'haproxy_service[haproxy]', :immediately
+all_web_nodes = search('node', 'role:web')
+
+servers = []
+
+all_web_nodes.each do |web_node|
+  server = "#{web_node['hostname']} #{web_node['ipaddress']}:80 maxconn 32"
+  servers.push(server)
 end
 
-haproxy_service 'haproxy'
+haproxy_backend 'servers' do
+  server servers
+end
+
+haproxy_service 'haproxy' do
+  subscribes :reload, 'template[/etc/haproxy/haproxy.cfg]', :immediately
+end
