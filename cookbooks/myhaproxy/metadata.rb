@@ -4,7 +4,7 @@ maintainer_email 'dave.hollerbach@gmail.com'
 license 'All Rights Reserved'
 description 'Installs/Configures myhaproxy'
 long_description 'Installs/Configures myhaproxy'
-version '1.0.0'
+version '1.0.1'
 chef_version '>= 13.0'
 
 depends 'haproxy', '~> 6.2.5'

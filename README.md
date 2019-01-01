@@ -94,7 +94,8 @@ Primary means of communication with the chef server
 #### Search
 * **knife search <index> <search_query>** - Runs a search on the chef server. <index> can be 'client', 'environment', 'node', 'role', or the name of a 'data bag'. <search_query> is the format 'attribute:value'. If you use '*:*', it return everything
 * **knife search node 'role:web AND recipes:apache'** - Searches for any nodes with a role of web and recipes containing the apache recipe
-* **knife search role '*:*' -a name** - Searches for all nodes but only returns the name attributes
+* **knife search role '*:*' -a name** - Searches for all nodes but only returns the name attribute
+* **knife search node *:* -a chef_environment** - Searches for all the nodes but only returns the environment attribute
 
 ### Berks
 
