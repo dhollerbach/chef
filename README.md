@@ -86,6 +86,11 @@ Primary means of communication with the chef server
 * **knife ssh '*:*' -p <port> -x <user> '<command>'** - Runs a command using a search. In this case, *:* is ALL nodes
 * **knife ssh 'role:web' -p <port> -x <user> '<command>'** - Runs a command on all nodes with a role of 'web'
 
+#### Environment
+* **knife environment list** - Lists the environments on the chef server. This is similar to the 'knife role list' command
+* **knife environment show <environment_name>** - Shows the details about the specified environment. This is similar to the 'knife role show <role_name>' command
+* **knife node environment set <node_name> <environment_name>** - Sets the environment for the specified node
+
 #### Search
 * **knife search <index> <search_query>** - Runs a search on the chef server. <index> can be 'client', 'environment', 'node', 'role', or the name of a 'data bag'. <search_query> is the format 'attribute:value'. If you use '*:*', it return everything
 * **knife search node 'role:web AND recipes:apache'** - Searches for any nodes with a role of web and recipes containing the apache recipe
