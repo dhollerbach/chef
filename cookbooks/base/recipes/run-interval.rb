@@ -1,8 +1,8 @@
 #
-# Cookbook:: mychef-client
-# Recipe:: default
+# Cookbook:: base
+# Recipe:: run-interval
 #
-# Copyright:: 2018, The Authors, All Rights Reserved.
+# Copyright:: 2019, The Authors, All Rights Reserved.
 
 # Runs every 5 minutes
 node.default['chef_client']['interval'] = '300'
