@@ -8,5 +8,6 @@
 package [
   'git',
   'ntp',
-  'tree'
+  'tree',
+  'vim'
 ]

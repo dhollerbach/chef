@@ -5,6 +5,7 @@
 * **Vagrant-Ohai** - vagrant plugin install vagrant-ohai
 * **Chef (localhost)** - https://docs.chef.io/install_omnibus.html
 * **ChefDK (vagrant box)** - curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
+* **ChefDK (latest)** - curl -L https://chef.io/chef/install.sh | sudo bash
 * **ChefDK** - https://downloads.chef.io/chefdk
 * **Chef Manage** - https://manage.chef.io
 * **Rub Style Guide** - https://docs.chef.io/ruby.html
